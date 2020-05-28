@@ -1,0 +1,3 @@
+/node_modules/
+**/src/environments/environment.prod.ts
+**/src/environments/environment.ts

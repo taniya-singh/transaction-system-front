@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Transactions
+            <i class="fa fa-plus add-btn" tooltip="Add New transaction" aria-hidden="true" [routerLink]="['/transaction/add']"></i>
+  
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th width="20%">
+                  Date
+                </th>
+                <th width="25%">
+                  Description
+                </th>
+                <th width="15%">
+                  Credit
+                </th>
+                <th width="15%">
+                  Debit
+                </th>
+                <th width="25%">
+                  Runnning Balance
+                </th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let transaction of transactions | paginate: { itemsPerPage:itemsPerPage, currentPage: p}">
+                  <td>
+                    {{transaction.createdAt | date}}
+                  </td>
+                  <td>
+                    {{transaction.desc |capitalizeFirst}}
+                  </td>
+                  <td >
+                    {{transaction.transType=='c' ? transaction.amount : '-'}}
+                  </td>
+                  <td>
+                    {{transaction.transType=='d' ? transaction.amount : '-'}}
+                  </td>
+                  <td>
+                    {{transaction.balance}}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="my-pagination" colspan="5">
+                    <pagination-controls autoHide="true" responsive="true" (pageChange)="p = $event">
+                    </pagination-controls>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

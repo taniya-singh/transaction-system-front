@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Add New Transaction</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="tarnsForm" (ngSubmit)="add(tarnsForm.value)">
+            <div class="row">
+              <div class="col-md-12 pr-1">
+                <div class="form-group">
+                  <label for="transType">Type of Transaction</label>
+                  <select formControlName='transType' class='form-control'>
+                    <option value='c'>Credit</option>
+                    <option value='d'>Debit</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 pr-1">
+                <div class="form-group">
+                  <label>Amount</label>
+                  <input type="number" class="form-control" placeholder="Amount"
+                    formControlName="amount" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 pr-1">
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea formControlName="desc" rows="3" cols="120">                             
+                  </textarea>
+                  <!-- <textarea type="text" class="form-control" placeholder="Enter Description" 
+                  formControlName="desc" required> </textarea> -->
+                </div>
+              </div>
+            </div>
+            <div class="row update-btn">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-round" [disabled]="tarnsForm.invalid">Add New Transaction
+                  </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
