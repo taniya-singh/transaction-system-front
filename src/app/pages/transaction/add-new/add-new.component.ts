@@ -23,7 +23,7 @@ export class AddNewComponent implements OnInit {
     this.tarnsForm = this.fb.group({
       transType: ['', [Validators.required]],
       amount: ['', [Validators.required]],
-      desc: ['', [Validators.required]]
+      desc: ['']
     }); 
   
   }

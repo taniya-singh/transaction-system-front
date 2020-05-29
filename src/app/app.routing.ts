@@ -4,6 +4,7 @@ import { TransactionLayoutComponent } from './layouts/transaction-layout/transac
 import { ListComponent } from './pages/transaction/list/list.component';
 
 export const AppRoutes: Routes = [
+  { path: '',   redirectTo: '/transaction/list', pathMatch: 'full' },
   {
     path: '',
     component: TransactionLayoutComponent,

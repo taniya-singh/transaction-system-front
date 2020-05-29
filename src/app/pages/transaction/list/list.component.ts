@@ -46,6 +46,8 @@ public transactions:any=[]
         this.isLoading = false;
       }
       this.spinner.hide()
+    },(err)=>{
+      this.spinner.hide()
     });
   }
 
